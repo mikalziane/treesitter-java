@@ -16,6 +16,7 @@ dependencies {
     implementation("io.github.bonede:tree-sitter-json:0.21.0a")
 }
 ### Simplest Json Parser example
+```java
 import org.treesitter.TSLanguage;
 import org.treesitter.TSNode;
 import org.treesitter.TSParser;
@@ -33,7 +34,7 @@ public class Main {
         TSNode numberNode = arrayNode.getNamedChild(0);
     }
 }
-
+```
 
 
 
