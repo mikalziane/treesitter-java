@@ -16,6 +16,7 @@ dependencies {
     implementation("io.github.bonede:tree-sitter:0.22.6")
     implementation("io.github.bonede:tree-sitter-json:0.21.0a")
 }
+```
 ### Simplest Json Parser example from Tree Sitter NG with the imports added
 ```java
 import org.treesitter.TSLanguage;
