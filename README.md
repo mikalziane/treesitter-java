@@ -1,37 +1,38 @@
-﻿# treesitter
+﻿# Treesitter in Java for Java unsing Tree Sitter NG
 
-## Liens utiles pour commencer avec treesitter
-
-official documentation
+## Links
+### Tree-Sitter
 https://tree-sitter.github.io/tree-sitter/
 
-Guide to your first Tree-sitter grammar
-https://gist.github.com/Aerijo/df27228d70c633e088b0591b8857eeef
+### Tree Sitter NG
+https://github.com/bonede/tree-sitter-ng?tab=readme-ov-file
 
-How to write a tree-sitter grammar in an afternoon
-https://siraben.dev/2022/03/01/tree-sitter.html
+## Getting Started
+### Gradle Dependencies
+dependencies {
+    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    implementation("io.github.bonede:tree-sitter:0.22.6")
+    implementation("io.github.bonede:tree-sitter-json:0.21.0a")
+}
+### Simplest Json Parser example
+import org.treesitter.TSLanguage;
+import org.treesitter.TSNode;
+import org.treesitter.TSParser;
+import org.treesitter.TreeSitterJson;
+import org.treesitter.TSTree;
 
-## Installation de treesitter
-
-### NVM vs NPM
-"NVM helps manage multiple Node.js versions on the same machine, enabling developers to switch between them as needed."
-"NPM, on the other hand, is a package manager for Node.js, allowing developers to install, share, and manage dependencies in their projects."
-
-### Installer ces outils 
-node.js <= nvm 
-
-node-gyp <= npm
-
-node-gyp <= python
-
-Contrary to what is said in in one of the guides above, it does not seem that node-gyp currently needs python 2 any more.
-
-Beware also that some commands do not run in powershell while they run in cmd. For instance 
-
-"where py"  runs in cmd
-
-while in *powershell* you need to run "where.exe py"
-
+public class Main {
+    public static void main(String[] args) {
+        TSParser parser = new TSParser();
+        TSLanguage json = new TreeSitterJson();
+        parser.setLanguage(json);
+        TSTree tree = parser.parseString(null, "[1, null]");
+        TSNode rootNode = tree.getRootNode();
+        TSNode arrayNode = rootNode.getNamedChild(0);
+        TSNode numberNode = arrayNode.getNamedChild(0);
+    }
+}
 
 
 
