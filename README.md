@@ -9,13 +9,14 @@ https://github.com/bonede/tree-sitter-ng?tab=readme-ov-file
 
 ## Getting Started
 ### Gradle Dependencies
+```kts
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("io.github.bonede:tree-sitter:0.22.6")
     implementation("io.github.bonede:tree-sitter-json:0.21.0a")
 }
-### Simplest Json Parser example
+### Simplest Json Parser example from Tree Sitter NG with the imports added
 ```java
 import org.treesitter.TSLanguage;
 import org.treesitter.TSNode;
