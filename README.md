@@ -1,4 +1,4 @@
-﻿# Treesitter in Java for Java unsing Tree Sitter NG
+﻿# Treesitter in Java for Java using Tree Sitter NG
 
 ## Links
 ### Tree-Sitter
