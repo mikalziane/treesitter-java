@@ -1,5 +1,7 @@
 ﻿# Treesitter in Java for Java using Tree Sitter NG
 
+ This initial version starts with a very simple exmaple relying on a Json parser. It will then be adapted to a java parser.
+
 ## Links
 ### Tree-Sitter
 https://tree-sitter.github.io/tree-sitter/
